@@ -1,0 +1,65 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Configure NOTAM Integration",
+        "description": "Monitor NOTAMs by airfield codes and/or geographic coordinates. Enter airfield codes as comma-separated values (e.g., {airfields_example}).",
+        "data": {
+          "airfields": "ICAO Airfield Codes (comma-separated)",
+          "add_coordinates": "Add coordinate areas",
+          "refresh_interval": "Refresh Interval (minutes)"
+        }
+      },
+      "coordinates": {
+        "title": "Add Coordinate Area",
+        "description": "{count}",
+        "data": {
+          "latitude": "Latitude",
+          "longitude": "Longitude",
+          "range_nm": "Range (Nautical Miles)",
+          "add_another": "Add another coordinate area"
+        }
+      }
+    },
+    "error": {
+      "no_filters": "Must provide either airfields or coordinates",
+      "invalid_icao": "Invalid ICAO code format (must be 4 letters)",
+      "cannot_connect": "Failed to connect to NATS feed",
+      "invalid_coordinates": "Invalid coordinate values",
+      "invalid_range": "Range must be greater than 0",
+      "unknown": "Unexpected error occurred"
+    },
+    "abort": {
+      "already_configured": "NOTAM integration is already configured"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "NOTAM Options",
+        "description": "Currently monitoring {coord_count} coordinate area(s). To change coordinate areas, enable 'Modify coordinates' below.",
+        "data": {
+          "airfields": "ICAO Airfield Codes (comma-separated)",
+          "refresh_interval": "Refresh Interval (minutes)",
+          "modify_coordinates": "Modify coordinate areas"
+        }
+      },
+      "coordinates": {
+        "title": "Add Coordinate Area",
+        "description": "Added {count} area(s) so far.",
+        "data": {
+          "latitude": "Latitude",
+          "longitude": "Longitude",
+          "range_nm": "Range (Nautical Miles)",
+          "add_another": "Add another coordinate area"
+        }
+      }
+    },
+    "error": {
+      "no_filters": "Must provide either airfields or coordinates",
+      "invalid_icao": "Invalid ICAO code format (must be 4 letters)",
+      "invalid_coordinates": "Invalid coordinate values",
+      "invalid_range": "Range must be greater than 0"
+    }
+  }
+}

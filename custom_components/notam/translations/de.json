@@ -1,0 +1,62 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "NOTAM-Konfiguration",
+        "description": "Konfigurieren Sie die NOTAM-Integration zur Überwachung von NOTAMs aus dem Vereinigten Königreich. Sie müssen mindestens einen Flugplatz ODER einen Koordinatenbereich konfigurieren.",
+        "data": {
+          "aerodromes": "ICAO-Codes der Flugplätze (durch Kommas getrennt, z.B. EGLL,EGKK,EGSS)",
+          "refresh_interval": "Aktualisierungsintervall (Minuten)"
+        }
+      },
+      "coordinates": {
+        "title": "Koordinatenkonfiguration",
+        "description": "Fügen Sie einen Koordinatenbereich hinzu, um NOTAMs innerhalb eines Radius um einen Punkt zu überwachen.",
+        "data": {
+          "latitude": "Breitengrad",
+          "longitude": "Längengrad",
+          "range_nm": "Radius (Seemeilen)",
+          "add_another": "Weiteren Koordinatenbereich hinzufügen"
+        }
+      }
+    },
+    "error": {
+      "invalid_icao": "Ungültiger ICAO-Code. Muss aus 4 Buchstaben bestehen (z.B. EGLL).",
+      "invalid_coordinates": "Ungültige Koordinaten. Bitte überprüfen Sie Breiten- und Längengrad.",
+      "invalid_range": "Der Radius muss größer als 0 sein.",
+      "no_filters": "Sie müssen mindestens einen Flugplatz ODER einen Koordinatenbereich konfigurieren."
+    },
+    "abort": {
+      "already_configured": "Diese Integration ist bereits konfiguriert."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "NOTAM-Optionen",
+        "description": "Konfigurieren Sie NOTAM-Filter und Aktualisierungsintervall.",
+        "data": {
+          "aerodromes": "ICAO-Codes der Flugplätze (durch Kommas getrennt)",
+          "refresh_interval": "Aktualisierungsintervall (Minuten)",
+          "modify_coordinates": "Koordinatenbereiche ändern"
+        }
+      },
+      "coordinates": {
+        "title": "Koordinatenkonfiguration",
+        "description": "Fügen Sie einen Koordinatenbereich hinzu, um NOTAMs innerhalb eines Radius um einen Punkt zu überwachen.",
+        "data": {
+          "latitude": "Breitengrad",
+          "longitude": "Längengrad",
+          "range_nm": "Radius (Seemeilen)",
+          "add_another": "Weiteren Koordinatenbereich hinzufügen"
+        }
+      }
+    },
+    "error": {
+      "invalid_icao": "Ungültiger ICAO-Code. Muss aus 4 Buchstaben bestehen (z.B. EGLL).",
+      "invalid_coordinates": "Ungültige Koordinaten. Bitte überprüfen Sie Breiten- und Längengrad.",
+      "invalid_range": "Der Radius muss größer als 0 sein.",
+      "no_filters": "Sie müssen mindestens einen Flugplatz ODER einen Koordinatenbereich konfigurieren."
+    }
+  }
+}

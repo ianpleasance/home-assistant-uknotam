@@ -1,0 +1,64 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Configure NOTAM Integration",
+        "description": "Monitor NOTAMs by aerodrome codes and/or geographic coordinates.",
+        "data": {
+          "aerodromes": "ICAO Aerodrome Codes (comma-separated, e.g., EGLL, EGKK, EGSS)",
+          "add_coordinates": "Add coordinate areas",
+          "refresh_interval": "Refresh Interval (minutes)"
+        }
+      },
+      "coordinates": {
+        "title": "Add Coordinate Area",
+        "description": "Add geographic areas to monitor NOTAMs by location.",
+        "data": {
+          "latitude": "Latitude",
+          "longitude": "Longitude",
+          "range_nm": "Range (Nautical Miles)",
+          "add_another": "Add another coordinate area"
+        }
+      }
+    },
+    "error": {
+      "no_filters": "Must provide either aerodromes or coordinates",
+      "invalid_icao": "Invalid ICAO code format (must be 4 letters)",
+      "cannot_connect": "Failed to connect to NATS feed",
+      "invalid_coordinates": "Invalid coordinate values",
+      "invalid_range": "Range must be greater than 0",
+      "unknown": "Unexpected error occurred"
+    },
+    "abort": {
+      "already_configured": "NOTAM integration is already configured"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "NOTAM Options",
+        "description": "Update NOTAM monitoring configuration. Enable 'Modify coordinates' to change geographic areas.",
+        "data": {
+          "aerodromes": "ICAO Aerodrome Codes (comma-separated)",
+          "refresh_interval": "Refresh Interval (minutes)",
+          "modify_coordinates": "Modify coordinate areas"
+        }
+      },
+      "coordinates": {
+        "title": "Add Coordinate Area",
+        "description": "Add geographic areas to monitor NOTAMs by location.",
+        "data": {
+          "latitude": "Latitude",
+          "longitude": "Longitude",
+          "range_nm": "Range (Nautical Miles)",
+          "add_another": "Add another coordinate area"
+        }
+      }
+    },
+    "error": {
+      "invalid_icao": "Invalid ICAO code format (must be 4 letters)",
+      "invalid_coordinates": "Invalid coordinate values",
+      "invalid_range": "Range must be greater than 0"
+    }
+  }
+}

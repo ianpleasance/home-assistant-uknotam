@@ -1,0 +1,10 @@
+{
+  "domain": "notam",
+  "name": "NOTAM",
+  "codeowners": [],
+  "config_flow": true,
+  "documentation": "https://github.com/yourusername/notam",
+  "iot_class": "cloud_polling",
+  "requirements": [],
+  "version": "0.9.0"
+}

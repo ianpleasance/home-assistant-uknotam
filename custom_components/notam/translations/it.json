@@ -1,0 +1,62 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Configurazione NOTAM",
+        "description": "Configura l'integrazione NOTAM per monitorare i NOTAM del Regno Unito. Devi configurare almeno un aerodromo O un'area di coordinate.",
+        "data": {
+          "aerodromes": "Codici ICAO degli aerodromi (separati da virgole, es. EGLL,EGKK,EGSS)",
+          "refresh_interval": "Intervallo di aggiornamento (minuti)"
+        }
+      },
+      "coordinates": {
+        "title": "Configurazione coordinate",
+        "description": "Aggiungi un'area di coordinate per monitorare i NOTAM entro un raggio attorno a un punto.",
+        "data": {
+          "latitude": "Latitudine",
+          "longitude": "Longitudine",
+          "range_nm": "Raggio (miglia nautiche)",
+          "add_another": "Aggiungi un'altra area di coordinate"
+        }
+      }
+    },
+    "error": {
+      "invalid_icao": "Codice ICAO non valido. Deve essere di 4 lettere (es. EGLL).",
+      "invalid_coordinates": "Coordinate non valide. Verifica latitudine e longitudine.",
+      "invalid_range": "Il raggio deve essere maggiore di 0.",
+      "no_filters": "Devi configurare almeno un aerodromo O un'area di coordinate."
+    },
+    "abort": {
+      "already_configured": "Questa integrazione è già configurata."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opzioni NOTAM",
+        "description": "Configura i filtri NOTAM e l'intervallo di aggiornamento.",
+        "data": {
+          "aerodromes": "Codici ICAO degli aerodromi (separati da virgole)",
+          "refresh_interval": "Intervallo di aggiornamento (minuti)",
+          "modify_coordinates": "Modifica aree di coordinate"
+        }
+      },
+      "coordinates": {
+        "title": "Configurazione coordinate",
+        "description": "Aggiungi un'area di coordinate per monitorare i NOTAM entro un raggio attorno a un punto.",
+        "data": {
+          "latitude": "Latitudine",
+          "longitude": "Longitudine",
+          "range_nm": "Raggio (miglia nautiche)",
+          "add_another": "Aggiungi un'altra area di coordinate"
+        }
+      }
+    },
+    "error": {
+      "invalid_icao": "Codice ICAO non valido. Deve essere di 4 lettere (es. EGLL).",
+      "invalid_coordinates": "Coordinate non valide. Verifica latitudine e longitudine.",
+      "invalid_range": "Il raggio deve essere maggiore di 0.",
+      "no_filters": "Devi configurare almeno un aerodromo O un'area di coordinate."
+    }
+  }
+}

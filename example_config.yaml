@@ -1,0 +1,85 @@
+# Example configurations for the NOTAM integration
+
+# Example 1: Monitor specific airports
+notam:
+  airfields:
+    - "EGLL"  # London Heathrow
+    - "EGKK"  # London Gatwick
+    - "EGSS"  # London Stansted
+  refresh_interval: 60
+
+# Example 2: Monitor a single geographic area
+# notam:
+#   coordinates:
+#     latitude: 51.4700
+#     longitude: -0.4543
+#     range_nm: 50
+#   refresh_interval: 60
+
+# Example 3: Monitor multiple geographic areas (NEW!)
+# notam:
+#   coordinates:
+#     - latitude: 51.4700   # London area
+#       longitude: -0.4543
+#       range_nm: 50
+#     - latitude: 53.3537   # Manchester area
+#       longitude: -2.2750
+#       range_nm: 30
+#     - latitude: 55.9533   # Edinburgh area
+#       longitude: -3.1883
+#       range_nm: 40
+#   refresh_interval: 60
+
+# Example 4: Combined - monitor specific airports AND multiple geographic areas
+# notam:
+#   airfields:
+#     - "EGLL"  # Also explicitly include Heathrow
+#   coordinates:
+#     - latitude: 51.4700   # London area
+#       longitude: -0.4543
+#       range_nm: 50
+#     - latitude: 53.3537   # Manchester area
+#       longitude: -2.2750
+#       range_nm: 30
+#   refresh_interval: 120
+
+# Example 5: Regional airports in Scotland
+# notam:
+#   airfields:
+#     - "EGPF"  # Glasgow
+#     - "EGPH"  # Edinburgh
+#     - "EGPA"  # Kirkwall
+#     - "EGPB"  # Sumburgh
+#   refresh_interval: 30
+
+# Example 6: Monitor around specific locations (e.g., flight path)
+# notam:
+#   coordinates:
+#     - latitude: 51.1537   # Departure area
+#       longitude: -0.1821
+#       range_nm: 25
+#     - latitude: 52.3555   # Mid-route
+#       longitude: 0.1750
+#       range_nm: 25
+#     - latitude: 53.3537   # Arrival area
+#       longitude: -2.2750
+#       range_nm: 25
+#   refresh_interval: 45
+
+# Example 7: Comprehensive UK coverage with multiple regions
+# notam:
+#   airfields:
+#     - "EGLL"  # Major airports
+#     - "EGCC"
+#     - "EGPF"
+#   coordinates:
+#     - latitude: 51.5074   # Southeast
+#       longitude: -0.1278
+#       range_nm: 60
+#     - latitude: 53.4808   # Northwest
+#       longitude: -2.2426
+#       range_nm: 60
+#     - latitude: 55.8642   # Scotland
+#       longitude: -4.2518
+#       range_nm: 60
+#   refresh_interval: 60

@@ -1,0 +1,62 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Configuration NOTAM",
+        "description": "Configurez l'intégration NOTAM pour surveiller les NOTAM du Royaume-Uni. Vous devez configurer au moins un aérodrome OU une zone de coordonnées.",
+        "data": {
+          "aerodromes": "Codes ICAO des aérodromes (séparés par des virgules, par ex. EGLL,EGKK,EGSS)",
+          "refresh_interval": "Intervalle de rafraîchissement (minutes)"
+        }
+      },
+      "coordinates": {
+        "title": "Configuration des coordonnées",
+        "description": "Ajoutez une zone de coordonnées pour surveiller les NOTAM dans un rayon autour d'un point.",
+        "data": {
+          "latitude": "Latitude",
+          "longitude": "Longitude",
+          "range_nm": "Rayon (milles nautiques)",
+          "add_another": "Ajouter une autre zone de coordonnées"
+        }
+      }
+    },
+    "error": {
+      "invalid_icao": "Code ICAO invalide. Doit être composé de 4 lettres (par ex. EGLL).",
+      "invalid_coordinates": "Coordonnées invalides. Veuillez vérifier la latitude et la longitude.",
+      "invalid_range": "Le rayon doit être supérieur à 0.",
+      "no_filters": "Vous devez configurer au moins un aérodrome OU une zone de coordonnées."
+    },
+    "abort": {
+      "already_configured": "Cette intégration est déjà configurée."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Options NOTAM",
+        "description": "Configurez les filtres NOTAM et l'intervalle de rafraîchissement.",
+        "data": {
+          "aerodromes": "Codes ICAO des aérodromes (séparés par des virgules)",
+          "refresh_interval": "Intervalle de rafraîchissement (minutes)",
+          "modify_coordinates": "Modifier les zones de coordonnées"
+        }
+      },
+      "coordinates": {
+        "title": "Configuration des coordonnées",
+        "description": "Ajoutez une zone de coordonnées pour surveiller les NOTAM dans un rayon autour d'un point.",
+        "data": {
+          "latitude": "Latitude",
+          "longitude": "Longitude",
+          "range_nm": "Rayon (milles nautiques)",
+          "add_another": "Ajouter une autre zone de coordonnées"
+        }
+      }
+    },
+    "error": {
+      "invalid_icao": "Code ICAO invalide. Doit être composé de 4 lettres (par ex. EGLL).",
+      "invalid_coordinates": "Coordonnées invalides. Veuillez vérifier la latitude et la longitude.",
+      "invalid_range": "Le rayon doit être supérieur à 0.",
+      "no_filters": "Vous devez configurer au moins un aérodrome OU une zone de coordonnées."
+    }
+  }
+}

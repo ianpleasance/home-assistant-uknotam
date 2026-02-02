@@ -58,5 +58,12 @@
       "invalid_range": "Le rayon doit être supérieur à 0.",
       "no_filters": "Vous devez configurer au moins un aérodrome OU une zone de coordonnées."
     }
+    }
+  },
+  "services": {
+    "refresh": {
+      "name": "Actualiser les données NOTAM",
+      "description": "Forcer une actualisation immédiate des données NOTAM depuis le flux NATS PIB, en contournant l'intervalle de rafraîchissement normal."
+    }
   }
 }

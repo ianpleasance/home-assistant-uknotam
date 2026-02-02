@@ -58,5 +58,12 @@
       "invalid_range": "Der Radius muss größer als 0 sein.",
       "no_filters": "Sie müssen mindestens einen Flugplatz ODER einen Koordinatenbereich konfigurieren."
     }
+    }
+  },
+  "services": {
+    "refresh": {
+      "name": "NOTAM-Daten aktualisieren",
+      "description": "Erzwingen Sie eine sofortige Aktualisierung der NOTAM-Daten aus dem NATS PIB-Feed und umgehen Sie das normale Aktualisierungsintervall."
+    }
   }
 }

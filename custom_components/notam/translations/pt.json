@@ -58,5 +58,12 @@
       "invalid_range": "O raio deve ser maior que 0.",
       "no_filters": "Você deve configurar pelo menos um aeródromo OU uma área de coordenadas."
     }
+    }
+  },
+  "services": {
+    "refresh": {
+      "name": "Atualizar dados NOTAM",
+      "description": "Forçar uma atualização imediata dos dados NOTAM do feed NATS PIB, ignorando o intervalo de atualização normal."
+    }
   }
 }

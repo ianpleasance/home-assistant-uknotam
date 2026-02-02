@@ -58,5 +58,12 @@
       "invalid_range": "El radio debe ser mayor que 0.",
       "no_filters": "Debe configurar al menos un aeródromo O un área de coordenadas."
     }
+    }
+  },
+  "services": {
+    "refresh": {
+      "name": "Actualizar datos NOTAM",
+      "description": "Forzar una actualización inmediata de los datos NOTAM desde el feed NATS PIB, omitiendo el intervalo de actualización normal."
+    }
   }
 }

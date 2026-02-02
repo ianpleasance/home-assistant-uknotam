@@ -56,9 +56,16 @@
       }
     },
     "error": {
+      "no_filters": "Must provide either aerodromes or coordinates",
       "invalid_icao": "Invalid ICAO code format (must be 4 letters)",
       "invalid_coordinates": "Invalid coordinate values",
       "invalid_range": "Range must be greater than 0"
+    }
+  },
+  "services": {
+    "refresh": {
+      "name": "Refresh NOTAM data",
+      "description": "Force an immediate refresh of NOTAM data from the NATS PIB feed, bypassing the normal refresh interval."
     }
   }
 }

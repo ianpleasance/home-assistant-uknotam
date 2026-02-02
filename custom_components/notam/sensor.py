@@ -70,9 +70,30 @@ async def async_setup_entry(
 
     # Create NOTAM sensors
     notam_sensors = []
+    seen_unique_ids = set()
+    
     if coordinator.data and "notams" in coordinator.data:
         _LOGGER.info("Creating sensors for %d NOTAMs", len(coordinator.data["notams"]))
         for notam in coordinator.data["notams"]:
+            # Validate that critical fields exist
+            if not notam.get("nof") or not notam.get("series") or not notam.get("number") or not notam.get("year"):
+                _LOGGER.warning("Skipping NOTAM with missing fields: %s", notam)
+                continue
+            
+            # Generate the unique_id to check for duplicates
+            aerodrome = (notam.get("aerodrome_code") or notam.get("nof") or "unknown").lower()
+            nof = notam.get("nof").lower()
+            series = notam.get("series").lower()
+            number = notam.get("number").lower()
+            year = notam.get("year").lower()
+            unique_id = f"{entry.entry_id}_{aerodrome}_{nof}_{series}{number}_{year}"
+            
+            # Skip if we've already created a sensor with this unique_id
+            if unique_id in seen_unique_ids:
+                _LOGGER.debug("Skipping duplicate NOTAM: %s/%s%s/%s", nof, series, number, year)
+                continue
+            
+            seen_unique_ids.add(unique_id)
             notam_sensors.append(NOTAMSensor(coordinator, entry, notam))
     else:
         _LOGGER.warning("No NOTAM data available to create sensors!")
@@ -278,13 +299,15 @@ class NOTAMSensor(CoordinatorEntity, SensorEntity):
         # Generate entity ID with aerodrome code
         # Format: notam_<aerodrome>_<series><number>_<year>
         # e.g., notam_egll_a6550_25 for EGLL aerodrome
-        aerodrome = notam.get("aerodrome_code", notam["nof"]).lower()
-        nof = notam["nof"].lower()
-        series = notam["series"].lower()
-        number = notam["number"].lower()
-        year = notam["year"].lower()
+        # Include NOF in unique_id to prevent duplicates for FIR-wide NOTAMs
+        aerodrome = (notam.get("aerodrome_code") or notam.get("nof") or "unknown").lower()
+        nof = (notam.get("nof") or "unknown").lower()
+        series = (notam.get("series") or "x").lower()
+        number = (notam.get("number") or "0").lower()
+        year = (notam.get("year") or "00").lower()
         
-        self._attr_unique_id = f"{entry.entry_id}_{aerodrome}_{series}{number}_{year}"
+        # Include NOF in unique_id to handle FIR-wide NOTAMs that appear multiple times
+        self._attr_unique_id = f"{entry.entry_id}_{aerodrome}_{nof}_{series}{number}_{year}"
         # Name format: "NOTAM EGLL EGGN/A6550/25" (aerodrome NOF/Series+Number/Year)
         self._attr_name = f"NOTAM {aerodrome.upper()} {nof.upper()}/{series.upper()}{number}/{year}"
         self._attr_icon = "mdi:airplane-alert"
@@ -303,6 +326,22 @@ class NOTAMSensor(CoordinatorEntity, SensorEntity):
         # Fallback to stored NOTAM data
         description = self._notam.get("description", "")
         return description[:252] + "..." if len(description) > 255 else description
+
+    @property
+    def available(self) -> bool:
+        """Return True if entity is available."""
+        # Check if coordinator has data
+        if not self.coordinator.last_update_success:
+            return False
+        
+        # Check if this specific NOTAM still exists in the data
+        if self.coordinator.data and "notams" in self.coordinator.data:
+            for notam in self.coordinator.data["notams"]:
+                if self._matches_notam(notam):
+                    return True
+        
+        # If NOTAM not found in current data, it's expired/removed
+        return False
 
     @property
     def extra_state_attributes(self) -> dict[str, Any]:

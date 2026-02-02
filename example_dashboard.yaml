@@ -98,20 +98,25 @@ views:
           {% endfor %}
 
           {% endif %}
-      - type: horizontal-stack
-        cards:
-          - type: statistic
-            entity: sensor.notam_data
-            name: Total NOTAMs
-            icon: mdi:counter
-          - type: entity
-            entity: sensor.notam_aerodromes
+      - type: glance
+        title: Quick Statistics
+        columns: 3
+        entities:
+          - entity: sensor.notam_data
+            name: Active NOTAMs
+            icon: mdi:bell-alert
+          - entity: sensor.notam_aerodromes
             name: UK Aerodromes
             icon: mdi:airport
-          - type: entity
-            entity: sensor.notam_firs
-            name: UK FIRs
+          - entity: sensor.notam_firs
+            name: FIRs
             icon: mdi:earth
+      - type: button
+        name: Refresh NOTAMs
+        icon: mdi:refresh
+        tap_action:
+          action: call-service
+          service: notam.refresh
   - title: Configuration
     path: config
     icon: mdi:cog

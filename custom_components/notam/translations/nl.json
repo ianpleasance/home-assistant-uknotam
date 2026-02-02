@@ -58,5 +58,12 @@
       "invalid_range": "De straal moet groter zijn dan 0.",
       "no_filters": "U moet minstens één vliegveld OF een coördinatengebied configureren."
     }
+    }
+  },
+  "services": {
+    "refresh": {
+      "name": "NOTAM-gegevens verversen",
+      "description": "Forceer een onmiddellijke verversing van NOTAM-gegevens van de NATS PIB-feed, waarbij het normale verversingsinterval wordt omzeild."
+    }
   }
 }

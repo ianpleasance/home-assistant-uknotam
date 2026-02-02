@@ -58,5 +58,12 @@
       "invalid_range": "Il raggio deve essere maggiore di 0.",
       "no_filters": "Devi configurare almeno un aerodromo O un'area di coordinate."
     }
+    }
+  },
+  "services": {
+    "refresh": {
+      "name": "Aggiorna dati NOTAM",
+      "description": "Forza un aggiornamento immediato dei dati NOTAM dal feed NATS PIB, ignorando l'intervallo di aggiornamento normale."
+    }
   }
 }

@@ -58,5 +58,12 @@
       "invalid_range": "Promień musi być większy niż 0.",
       "no_filters": "Musisz skonfigurować co najmniej jedno lotnisko LUB obszar współrzędnych."
     }
+    }
+  },
+  "services": {
+    "refresh": {
+      "name": "Odśwież dane NOTAM",
+      "description": "Wymuś natychmiastowe odświeżenie danych NOTAM z kanału NATS PIB, pomijając normalny interwał odświeżania."
+    }
   }
 }

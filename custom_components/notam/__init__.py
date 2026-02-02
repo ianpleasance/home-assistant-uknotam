@@ -134,6 +134,21 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     # Setup options flow update listener
     entry.async_on_unload(entry.add_update_listener(async_reload_entry))
 
+    # Register services
+    async def handle_refresh(call):
+        """Handle the refresh service call."""
+        _LOGGER.info("Manual refresh requested via service call")
+        await coordinator.async_request_refresh()
+    
+    # Register the service (only once, even if multiple config entries)
+    if not hass.services.has_service(DOMAIN, "refresh"):
+        hass.services.async_register(
+            DOMAIN,
+            "refresh",
+            handle_refresh,
+        )
+        _LOGGER.info("Registered notam.refresh service")
+
     return True
 
 

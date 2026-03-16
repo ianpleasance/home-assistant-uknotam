@@ -1,0 +1,65 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Configurar la integración UK NOTAMs",
+        "description": "Monitorear NOTAMs del Reino Unido por códigos de aeródromo y/o coordenadas geográficas.",
+        "data": {
+          "aerodromes": "Códigos ICAO de aeródromo (separados por comas, p.ej. EGLL, EGKK, EGSS)",
+          "add_coordinates": "Añadir áreas de coordenadas",
+          "refresh_interval": "Intervalo de actualización (minutos)"
+        }
+      },
+      "coordinates": {
+        "title": "Añadir área de coordenadas",
+        "description": "Añadir un área geográfica para monitorear NOTAMs por ubicación.",
+        "data": {
+          "latitude": "Latitud",
+          "longitude": "Longitud",
+          "range_nm": "Radio (millas náuticas)",
+          "add_another": "Añadir otra área de coordenadas"
+        }
+      }
+    },
+    "error": {
+      "no_filters": "Debe proporcionar aeródromos o coordenadas",
+      "invalid_icao": "Formato de código ICAO inválido (debe tener 4 letras)",
+      "cannot_connect": "Error al conectar con el feed NATS PIB",
+      "invalid_coordinates": "Valores de coordenadas inválidos",
+      "invalid_range": "El radio debe ser mayor que 0",
+      "unknown": "Se produjo un error inesperado"
+    },
+    "abort": {
+      "already_configured": "La integración UK NOTAMs ya está configurada"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opciones UK NOTAMs",
+        "description": "Actualizar la configuración de monitoreo de NOTAMs del Reino Unido.",
+        "data": {
+          "aerodromes": "Códigos ICAO de aeródromo (separados por comas)",
+          "refresh_interval": "Intervalo de actualización (minutos)",
+          "modify_coordinates": "Modificar áreas de coordenadas"
+        }
+      },
+      "coordinates": {
+        "title": "Añadir área de coordenadas",
+        "description": "{count} área(s) añadida(s) hasta ahora.",
+        "data": {
+          "latitude": "Latitud",
+          "longitude": "Longitud",
+          "range_nm": "Radio (millas náuticas)",
+          "add_another": "Añadir otra área de coordenadas"
+        }
+      }
+    },
+    "error": {
+      "no_filters": "Debe proporcionar aeródromos o coordenadas",
+      "invalid_icao": "Formato de código ICAO inválido (debe tener 4 letras)",
+      "invalid_coordinates": "Valores de coordenadas inválidos",
+      "invalid_range": "El radio debe ser mayor que 0"
+    }
+  }
+}

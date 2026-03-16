@@ -1,5 +1,5 @@
 {
-  "name": "UK NOTAM Integration",
+  "name": "UK NOTAMs",
   "render_readme": true,
   "domains": ["sensor"],
   "iot_class": "Cloud Polling",

@@ -1,0 +1,65 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Määritä UK NOTAMs -integraatio",
+        "description": "Seuraa Yhdistyneen kuningaskunnan NOTAMeja lentokentäkoodien ja/tai maantieteellisten koordinaattien mukaan.",
+        "data": {
+          "aerodromes": "ICAO-lentokenttäkoodit (pilkulla erotettu, esim. EGLL, EGKK, EGSS)",
+          "add_coordinates": "Lisää koordinaattialueita",
+          "refresh_interval": "Päivitysväli (minuuttia)"
+        }
+      },
+      "coordinates": {
+        "title": "Lisää koordinaattialue",
+        "description": "Lisää maantieteellinen alue NOTAMien seurantaan sijainnin mukaan.",
+        "data": {
+          "latitude": "Leveysaste",
+          "longitude": "Pituusaste",
+          "range_nm": "Säde (meripeninkulma)",
+          "add_another": "Lisää toinen koordinaattialue"
+        }
+      }
+    },
+    "error": {
+      "no_filters": "Anna lentokentät tai koordinaatit",
+      "invalid_icao": "Virheellinen ICAO-koodimuoto (täytyy olla 4 kirjainta)",
+      "cannot_connect": "Yhteys NATS PIB -syötteeseen epäonnistui",
+      "invalid_coordinates": "Virheelliset koordinaattiarvot",
+      "invalid_range": "Säteen täytyy olla suurempi kuin 0",
+      "unknown": "Odottamaton virhe tapahtui"
+    },
+    "abort": {
+      "already_configured": "UK NOTAMs -integraatio on jo määritetty"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "UK NOTAMs -asetukset",
+        "description": "Päivitä UK NOTAMien seurantamääritykset.",
+        "data": {
+          "aerodromes": "ICAO-lentokenttäkoodit (pilkulla erotettu)",
+          "refresh_interval": "Päivitysväli (minuuttia)",
+          "modify_coordinates": "Muokkaa koordinaattialueita"
+        }
+      },
+      "coordinates": {
+        "title": "Lisää koordinaattialue",
+        "description": "{count} alue/aluetta lisätty tähän mennessä.",
+        "data": {
+          "latitude": "Leveysaste",
+          "longitude": "Pituusaste",
+          "range_nm": "Säde (meripeninkulma)",
+          "add_another": "Lisää toinen koordinaattialue"
+        }
+      }
+    },
+    "error": {
+      "no_filters": "Anna lentokentät tai koordinaatit",
+      "invalid_icao": "Virheellinen ICAO-koodimuoto (täytyy olla 4 kirjainta)",
+      "invalid_coordinates": "Virheelliset koordinaattiarvot",
+      "invalid_range": "Säteen täytyy olla suurempi kuin 0"
+    }
+  }
+}

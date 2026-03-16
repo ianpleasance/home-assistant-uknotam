@@ -1,0 +1,65 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Konfiguracja integracji UK NOTAMs",
+        "description": "Monitoruj NOTAMy UK według kodów lotnisk i/lub współrzędnych geograficznych.",
+        "data": {
+          "aerodromes": "Kody ICAO lotnisk (oddzielone przecinkami, np. EGLL, EGKK, EGSS)",
+          "add_coordinates": "Dodaj obszary współrzędnych",
+          "refresh_interval": "Interwał odświeżania (minuty)"
+        }
+      },
+      "coordinates": {
+        "title": "Dodaj obszar współrzędnych",
+        "description": "Dodaj obszar geograficzny do monitorowania NOTAMów według lokalizacji.",
+        "data": {
+          "latitude": "Szerokość geograficzna",
+          "longitude": "Długość geograficzna",
+          "range_nm": "Zasięg (mile morskie)",
+          "add_another": "Dodaj kolejny obszar współrzędnych"
+        }
+      }
+    },
+    "error": {
+      "no_filters": "Należy podać lotniska lub współrzędne",
+      "invalid_icao": "Nieprawidłowy format kodu ICAO (musi mieć 4 litery)",
+      "cannot_connect": "Nie udało się połączyć z kanałem NATS PIB",
+      "invalid_coordinates": "Nieprawidłowe wartości współrzędnych",
+      "invalid_range": "Zasięg musi być większy niż 0",
+      "unknown": "Wystąpił nieoczekiwany błąd"
+    },
+    "abort": {
+      "already_configured": "Integracja UK NOTAMs jest już skonfigurowana"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opcje UK NOTAMs",
+        "description": "Zaktualizuj konfigurację monitorowania NOTAMów UK.",
+        "data": {
+          "aerodromes": "Kody ICAO lotnisk (oddzielone przecinkami)",
+          "refresh_interval": "Interwał odświeżania (minuty)",
+          "modify_coordinates": "Modyfikuj obszary współrzędnych"
+        }
+      },
+      "coordinates": {
+        "title": "Dodaj obszar współrzędnych",
+        "description": "Dotychczas dodano {count} obszar(ów).",
+        "data": {
+          "latitude": "Szerokość geograficzna",
+          "longitude": "Długość geograficzna",
+          "range_nm": "Zasięg (mile morskie)",
+          "add_another": "Dodaj kolejny obszar współrzędnych"
+        }
+      }
+    },
+    "error": {
+      "no_filters": "Należy podać lotniska lub współrzędne",
+      "invalid_icao": "Nieprawidłowy format kodu ICAO (musi mieć 4 litery)",
+      "invalid_coordinates": "Nieprawidłowe wartości współrzędnych",
+      "invalid_range": "Zasięg musi być większy niż 0"
+    }
+  }
+}

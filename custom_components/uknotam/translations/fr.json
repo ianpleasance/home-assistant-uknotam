@@ -1,0 +1,65 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Configurer l'intégration UK NOTAMs",
+        "description": "Surveiller les NOTAMs britanniques par codes d'aérodrome et/ou coordonnées géographiques.",
+        "data": {
+          "aerodromes": "Codes OACI d'aérodrome (séparés par des virgules, ex. EGLL, EGKK, EGSS)",
+          "add_coordinates": "Ajouter des zones de coordonnées",
+          "refresh_interval": "Intervalle de rafraîchissement (minutes)"
+        }
+      },
+      "coordinates": {
+        "title": "Ajouter une zone de coordonnées",
+        "description": "Ajouter une zone géographique pour surveiller les NOTAMs par localisation.",
+        "data": {
+          "latitude": "Latitude",
+          "longitude": "Longitude",
+          "range_nm": "Rayon (milles nautiques)",
+          "add_another": "Ajouter une autre zone de coordonnées"
+        }
+      }
+    },
+    "error": {
+      "no_filters": "Veuillez fournir des aérodromes ou des coordonnées",
+      "invalid_icao": "Format de code OACI invalide (doit comporter 4 lettres)",
+      "cannot_connect": "Échec de connexion au flux NATS PIB",
+      "invalid_coordinates": "Valeurs de coordonnées invalides",
+      "invalid_range": "Le rayon doit être supérieur à 0",
+      "unknown": "Une erreur inattendue s'est produite"
+    },
+    "abort": {
+      "already_configured": "L'intégration UK NOTAMs est déjà configurée"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Options UK NOTAMs",
+        "description": "Mettre à jour la configuration de surveillance des NOTAMs britanniques.",
+        "data": {
+          "aerodromes": "Codes OACI d'aérodrome (séparés par des virgules)",
+          "refresh_interval": "Intervalle de rafraîchissement (minutes)",
+          "modify_coordinates": "Modifier les zones de coordonnées"
+        }
+      },
+      "coordinates": {
+        "title": "Ajouter une zone de coordonnées",
+        "description": "{count} zone(s) ajoutée(s) jusqu'à présent.",
+        "data": {
+          "latitude": "Latitude",
+          "longitude": "Longitude",
+          "range_nm": "Rayon (milles nautiques)",
+          "add_another": "Ajouter une autre zone de coordonnées"
+        }
+      }
+    },
+    "error": {
+      "no_filters": "Veuillez fournir des aérodromes ou des coordonnées",
+      "invalid_icao": "Format de code OACI invalide (doit comporter 4 lettres)",
+      "invalid_coordinates": "Valeurs de coordonnées invalides",
+      "invalid_range": "Le rayon doit être supérieur à 0"
+    }
+  }
+}

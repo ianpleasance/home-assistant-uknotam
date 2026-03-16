@@ -2,17 +2,17 @@
   "config": {
     "step": {
       "user": {
-        "title": "Configure NOTAM Integration",
-        "description": "Monitor NOTAMs by aerodrome codes and/or geographic coordinates.",
+        "title": "Configure UK NOTAMs Integration",
+        "description": "Monitor UK NOTAMs by aerodrome codes and/or geographic coordinates.",
         "data": {
-          "aerodromes": "ICAO Aerodrome Codes (comma-separated, e.g., EGLL, EGKK, EGSS)",
+          "aerodromes": "ICAO Aerodrome Codes (comma-separated, e.g. EGLL, EGKK, EGSS)",
           "add_coordinates": "Add coordinate areas",
           "refresh_interval": "Refresh Interval (minutes)"
         }
       },
       "coordinates": {
         "title": "Add Coordinate Area",
-        "description": "Add geographic areas to monitor NOTAMs by location.",
+        "description": "Add a geographic area to monitor NOTAMs by location.",
         "data": {
           "latitude": "Latitude",
           "longitude": "Longitude",
@@ -24,20 +24,20 @@
     "error": {
       "no_filters": "Must provide either aerodromes or coordinates",
       "invalid_icao": "Invalid ICAO code format (must be 4 letters)",
-      "cannot_connect": "Failed to connect to NATS feed",
+      "cannot_connect": "Failed to connect to NATS PIB feed",
       "invalid_coordinates": "Invalid coordinate values",
       "invalid_range": "Range must be greater than 0",
       "unknown": "Unexpected error occurred"
     },
     "abort": {
-      "already_configured": "NOTAM integration is already configured"
+      "already_configured": "UK NOTAMs integration is already configured"
     }
   },
   "options": {
     "step": {
       "init": {
-        "title": "NOTAM Options",
-        "description": "Update NOTAM monitoring configuration. Enable 'Modify coordinates' to change geographic areas.",
+        "title": "UK NOTAMs Options",
+        "description": "Update UK NOTAM monitoring configuration.",
         "data": {
           "aerodromes": "ICAO Aerodrome Codes (comma-separated)",
           "refresh_interval": "Refresh Interval (minutes)",
@@ -46,7 +46,7 @@
       },
       "coordinates": {
         "title": "Add Coordinate Area",
-        "description": "Add geographic areas to monitor NOTAMs by location.",
+        "description": "Added {count} area(s) so far.",
         "data": {
           "latitude": "Latitude",
           "longitude": "Longitude",
@@ -64,8 +64,8 @@
   },
   "services": {
     "refresh": {
-      "name": "Refresh NOTAM data",
-      "description": "Force an immediate refresh of NOTAM data from the NATS PIB feed, bypassing the normal refresh interval."
+      "name": "Refresh UK NOTAM data",
+      "description": "Force an immediate refresh of UK NOTAM data from the NATS PIB feed."
     }
   }
 }

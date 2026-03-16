@@ -1,0 +1,10 @@
+{
+  "domain": "uknotam",
+  "name": "UK NOTAM",
+  "codeowners": ["@ianpleasance"],
+  "config_flow": true,
+  "documentation": "https://github.com/ianpleasance/home-assistant-uknotam",
+  "iot_class": "cloud_polling",
+  "requirements": [],
+  "version": "3.0.0"
+}

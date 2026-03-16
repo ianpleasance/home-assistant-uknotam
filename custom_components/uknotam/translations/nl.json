@@ -1,0 +1,65 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "UK NOTAMs Integratie configureren",
+        "description": "UK NOTAMs bewaken op vliegveld-codes en/of geografische coördinaten.",
+        "data": {
+          "aerodromes": "ICAO Vliegveld-codes (kommagescheiden, bijv. EGLL, EGKK, EGSS)",
+          "add_coordinates": "Coördinaatgebieden toevoegen",
+          "refresh_interval": "Verversingsinterval (minuten)"
+        }
+      },
+      "coordinates": {
+        "title": "Coördinaatgebied toevoegen",
+        "description": "Een geografisch gebied toevoegen om NOTAMs per locatie te bewaken.",
+        "data": {
+          "latitude": "Breedtegraad",
+          "longitude": "Lengtegraad",
+          "range_nm": "Bereik (zeemijlen)",
+          "add_another": "Nog een coördinaatgebied toevoegen"
+        }
+      }
+    },
+    "error": {
+      "no_filters": "Geef vliegvelden of coördinaten op",
+      "invalid_icao": "Ongeldig ICAO-codeformaat (moet 4 letters zijn)",
+      "cannot_connect": "Verbinding met NATS PIB-feed mislukt",
+      "invalid_coordinates": "Ongeldige coördinaatwaarden",
+      "invalid_range": "Bereik moet groter dan 0 zijn",
+      "unknown": "Er is een onverwachte fout opgetreden"
+    },
+    "abort": {
+      "already_configured": "UK NOTAMs-integratie is al geconfigureerd"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "UK NOTAMs Opties",
+        "description": "UK NOTAM-bewakingsconfiguratie bijwerken.",
+        "data": {
+          "aerodromes": "ICAO Vliegveld-codes (kommagescheiden)",
+          "refresh_interval": "Verversingsinterval (minuten)",
+          "modify_coordinates": "Coördinaatgebieden wijzigen"
+        }
+      },
+      "coordinates": {
+        "title": "Coördinaatgebied toevoegen",
+        "description": "{count} gebied(en) tot nu toe toegevoegd.",
+        "data": {
+          "latitude": "Breedtegraad",
+          "longitude": "Lengtegraad",
+          "range_nm": "Bereik (zeemijlen)",
+          "add_another": "Nog een coördinaatgebied toevoegen"
+        }
+      }
+    },
+    "error": {
+      "no_filters": "Geef vliegvelden of coördinaten op",
+      "invalid_icao": "Ongeldig ICAO-codeformaat (moet 4 letters zijn)",
+      "invalid_coordinates": "Ongeldige coördinaatwaarden",
+      "invalid_range": "Bereik moet groter dan 0 zijn"
+    }
+  }
+}

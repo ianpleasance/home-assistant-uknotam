@@ -1,4 +1,4 @@
-"""XML parser for NOTAM data."""
+"""XML parser for UK NOTAM data."""
 import logging
 import math
 import re

@@ -1,0 +1,65 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Configura l'integrazione UK NOTAMs",
+        "description": "Monitora i NOTAM del Regno Unito per codici aeroportuali e/o coordinate geografiche.",
+        "data": {
+          "aerodromes": "Codici ICAO degli aeroporti (separati da virgola, es. EGLL, EGKK, EGSS)",
+          "add_coordinates": "Aggiungi aree di coordinate",
+          "refresh_interval": "Intervallo di aggiornamento (minuti)"
+        }
+      },
+      "coordinates": {
+        "title": "Aggiungi area di coordinate",
+        "description": "Aggiungere un'area geografica per monitorare i NOTAM per posizione.",
+        "data": {
+          "latitude": "Latitudine",
+          "longitude": "Longitudine",
+          "range_nm": "Raggio (miglia nautiche)",
+          "add_another": "Aggiungi un'altra area di coordinate"
+        }
+      }
+    },
+    "error": {
+      "no_filters": "È necessario fornire aeroporti o coordinate",
+      "invalid_icao": "Formato codice ICAO non valido (deve avere 4 lettere)",
+      "cannot_connect": "Connessione al feed NATS PIB non riuscita",
+      "invalid_coordinates": "Valori di coordinate non validi",
+      "invalid_range": "Il raggio deve essere maggiore di 0",
+      "unknown": "Si è verificato un errore imprevisto"
+    },
+    "abort": {
+      "already_configured": "L'integrazione UK NOTAMs è già configurata"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opzioni UK NOTAMs",
+        "description": "Aggiorna la configurazione di monitoraggio dei NOTAM del Regno Unito.",
+        "data": {
+          "aerodromes": "Codici ICAO degli aeroporti (separati da virgola)",
+          "refresh_interval": "Intervallo di aggiornamento (minuti)",
+          "modify_coordinates": "Modifica le aree di coordinate"
+        }
+      },
+      "coordinates": {
+        "title": "Aggiungi area di coordinate",
+        "description": "{count} area/e aggiunta/e finora.",
+        "data": {
+          "latitude": "Latitudine",
+          "longitude": "Longitudine",
+          "range_nm": "Raggio (miglia nautiche)",
+          "add_another": "Aggiungi un'altra area di coordinate"
+        }
+      }
+    },
+    "error": {
+      "no_filters": "È necessario fornire aeroporti o coordinate",
+      "invalid_icao": "Formato codice ICAO non valido (deve avere 4 lettere)",
+      "invalid_coordinates": "Valori di coordinate non validi",
+      "invalid_range": "Il raggio deve essere maggiore di 0"
+    }
+  }
+}

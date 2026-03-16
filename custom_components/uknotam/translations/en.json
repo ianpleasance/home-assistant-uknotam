@@ -2,17 +2,17 @@
   "config": {
     "step": {
       "user": {
-        "title": "Configure NOTAM Integration",
-        "description": "Monitor NOTAMs by airfield codes and/or geographic coordinates. Enter airfield codes as comma-separated values (e.g., {airfields_example}).",
+        "title": "Configure UK NOTAMs Integration",
+        "description": "Monitor UK NOTAMs by aerodrome codes and/or geographic coordinates.",
         "data": {
-          "airfields": "ICAO Airfield Codes (comma-separated)",
+          "aerodromes": "ICAO Aerodrome Codes (comma-separated, e.g. EGLL, EGKK, EGSS)",
           "add_coordinates": "Add coordinate areas",
           "refresh_interval": "Refresh Interval (minutes)"
         }
       },
       "coordinates": {
         "title": "Add Coordinate Area",
-        "description": "{count}",
+        "description": "Add a geographic area to monitor NOTAMs by location.",
         "data": {
           "latitude": "Latitude",
           "longitude": "Longitude",
@@ -22,24 +22,24 @@
       }
     },
     "error": {
-      "no_filters": "Must provide either airfields or coordinates",
+      "no_filters": "Must provide either aerodromes or coordinates",
       "invalid_icao": "Invalid ICAO code format (must be 4 letters)",
-      "cannot_connect": "Failed to connect to NATS feed",
+      "cannot_connect": "Failed to connect to NATS PIB feed",
       "invalid_coordinates": "Invalid coordinate values",
       "invalid_range": "Range must be greater than 0",
       "unknown": "Unexpected error occurred"
     },
     "abort": {
-      "already_configured": "NOTAM integration is already configured"
+      "already_configured": "UK NOTAMs integration is already configured"
     }
   },
   "options": {
     "step": {
       "init": {
-        "title": "NOTAM Options",
-        "description": "Currently monitoring {coord_count} coordinate area(s). To change coordinate areas, enable 'Modify coordinates' below.",
+        "title": "UK NOTAMs Options",
+        "description": "Update UK NOTAM monitoring configuration.",
         "data": {
-          "airfields": "ICAO Airfield Codes (comma-separated)",
+          "aerodromes": "ICAO Aerodrome Codes (comma-separated)",
           "refresh_interval": "Refresh Interval (minutes)",
           "modify_coordinates": "Modify coordinate areas"
         }
@@ -56,7 +56,7 @@
       }
     },
     "error": {
-      "no_filters": "Must provide either airfields or coordinates",
+      "no_filters": "Must provide either aerodromes or coordinates",
       "invalid_icao": "Invalid ICAO code format (must be 4 letters)",
       "invalid_coordinates": "Invalid coordinate values",
       "invalid_range": "Range must be greater than 0"

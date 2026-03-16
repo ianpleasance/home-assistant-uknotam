@@ -1,0 +1,65 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "UK NOTAMs Integration konfigurieren",
+        "description": "UK-NOTAMs nach Flugplatz-Codes und/oder geografischen Koordinaten überwachen.",
+        "data": {
+          "aerodromes": "ICAO-Flugplatz-Codes (kommagetrennt, z.B. EGLL, EGKK, EGSS)",
+          "add_coordinates": "Koordinatenbereiche hinzufügen",
+          "refresh_interval": "Aktualisierungsintervall (Minuten)"
+        }
+      },
+      "coordinates": {
+        "title": "Koordinatenbereich hinzufügen",
+        "description": "Geografischen Bereich zur NOTAM-Überwachung hinzufügen.",
+        "data": {
+          "latitude": "Breitengrad",
+          "longitude": "Längengrad",
+          "range_nm": "Radius (Seemeilen)",
+          "add_another": "Weiteren Koordinatenbereich hinzufügen"
+        }
+      }
+    },
+    "error": {
+      "no_filters": "Entweder Flugplätze oder Koordinaten müssen angegeben werden",
+      "invalid_icao": "Ungültiges ICAO-Code-Format (muss 4 Buchstaben haben)",
+      "cannot_connect": "Verbindung zum NATS-PIB-Feed fehlgeschlagen",
+      "invalid_coordinates": "Ungültige Koordinatenwerte",
+      "invalid_range": "Radius muss größer als 0 sein",
+      "unknown": "Unerwarteter Fehler aufgetreten"
+    },
+    "abort": {
+      "already_configured": "UK NOTAMs-Integration ist bereits konfiguriert"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "UK NOTAMs Optionen",
+        "description": "UK-NOTAM-Überwachungskonfiguration aktualisieren.",
+        "data": {
+          "aerodromes": "ICAO-Flugplatz-Codes (kommagetrennt)",
+          "refresh_interval": "Aktualisierungsintervall (Minuten)",
+          "modify_coordinates": "Koordinatenbereiche ändern"
+        }
+      },
+      "coordinates": {
+        "title": "Koordinatenbereich hinzufügen",
+        "description": "Bisher {count} Bereich(e) hinzugefügt.",
+        "data": {
+          "latitude": "Breitengrad",
+          "longitude": "Längengrad",
+          "range_nm": "Radius (Seemeilen)",
+          "add_another": "Weiteren Koordinatenbereich hinzufügen"
+        }
+      }
+    },
+    "error": {
+      "no_filters": "Entweder Flugplätze oder Koordinaten müssen angegeben werden",
+      "invalid_icao": "Ungültiges ICAO-Code-Format (muss 4 Buchstaben haben)",
+      "invalid_coordinates": "Ungültige Koordinatenwerte",
+      "invalid_range": "Radius muss größer als 0 sein"
+    }
+  }
+}

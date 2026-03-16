@@ -1,0 +1,65 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "UK NOTAMs インテグレーションを設定",
+        "description": "飛行場コードおよび/または地理座標でUK NOTAMを監視します。",
+        "data": {
+          "aerodromes": "ICAO 飛行場コード（カンマ区切り、例：EGLL, EGKK, EGSS）",
+          "add_coordinates": "座標エリアを追加",
+          "refresh_interval": "更新間隔（分）"
+        }
+      },
+      "coordinates": {
+        "title": "座標エリアを追加",
+        "description": "場所でNOTAMを監視するための地理エリアを追加します。",
+        "data": {
+          "latitude": "緯度",
+          "longitude": "経度",
+          "range_nm": "範囲（海里）",
+          "add_another": "別の座標エリアを追加"
+        }
+      }
+    },
+    "error": {
+      "no_filters": "飛行場または座標を指定してください",
+      "invalid_icao": "ICAOコード形式が無効です（4文字である必要があります）",
+      "cannot_connect": "NATS PIBフィードへの接続に失敗しました",
+      "invalid_coordinates": "座標の値が無効です",
+      "invalid_range": "範囲は0より大きくなければなりません",
+      "unknown": "予期しないエラーが発生しました"
+    },
+    "abort": {
+      "already_configured": "UK NOTAMsインテグレーションはすでに設定されています"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "UK NOTAMs オプション",
+        "description": "UK NOTAM監視設定を更新します。",
+        "data": {
+          "aerodromes": "ICAO 飛行場コード（カンマ区切り）",
+          "refresh_interval": "更新間隔（分）",
+          "modify_coordinates": "座標エリアを変更"
+        }
+      },
+      "coordinates": {
+        "title": "座標エリアを追加",
+        "description": "現在{count}エリアを追加済み。",
+        "data": {
+          "latitude": "緯度",
+          "longitude": "経度",
+          "range_nm": "範囲（海里）",
+          "add_another": "別の座標エリアを追加"
+        }
+      }
+    },
+    "error": {
+      "no_filters": "飛行場または座標を指定してください",
+      "invalid_icao": "ICAOコード形式が無効です（4文字である必要があります）",
+      "invalid_coordinates": "座標の値が無効です",
+      "invalid_range": "範囲は0より大きくなければなりません"
+    }
+  }
+}

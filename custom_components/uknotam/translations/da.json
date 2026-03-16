@@ -1,0 +1,65 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Konfigurer UK NOTAMs Integration",
+        "description": "Overvåg UK NOTAMs efter lufthavnskoder og/eller geografiske koordinater.",
+        "data": {
+          "aerodromes": "ICAO Lufthavnskoder (kommaseparerede, f.eks. EGLL, EGKK, EGSS)",
+          "add_coordinates": "Tilføj koordinatområder",
+          "refresh_interval": "Opdateringsinterval (minutter)"
+        }
+      },
+      "coordinates": {
+        "title": "Tilføj koordinatområde",
+        "description": "Tilføj et geografisk område til at overvåge NOTAMs efter placering.",
+        "data": {
+          "latitude": "Breddegrad",
+          "longitude": "Længdegrad",
+          "range_nm": "Rækkevidde (sømil)",
+          "add_another": "Tilføj endnu et koordinatområde"
+        }
+      }
+    },
+    "error": {
+      "no_filters": "Der skal angives lufthavne eller koordinater",
+      "invalid_icao": "Ugyldigt ICAO-kodeformat (skal være 4 bogstaver)",
+      "cannot_connect": "Forbindelse til NATS PIB-feed mislykkedes",
+      "invalid_coordinates": "Ugyldige koordinatværdier",
+      "invalid_range": "Rækkevidde skal være større end 0",
+      "unknown": "Der opstod en uventet fejl"
+    },
+    "abort": {
+      "already_configured": "UK NOTAMs-integration er allerede konfigureret"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "UK NOTAMs Indstillinger",
+        "description": "Opdater UK NOTAM-overvågningskonfiguration.",
+        "data": {
+          "aerodromes": "ICAO Lufthavnskoder (kommaseparerede)",
+          "refresh_interval": "Opdateringsinterval (minutter)",
+          "modify_coordinates": "Rediger koordinatområder"
+        }
+      },
+      "coordinates": {
+        "title": "Tilføj koordinatområde",
+        "description": "{count} område(r) tilføjet indtil videre.",
+        "data": {
+          "latitude": "Breddegrad",
+          "longitude": "Længdegrad",
+          "range_nm": "Rækkevidde (sømil)",
+          "add_another": "Tilføj endnu et koordinatområde"
+        }
+      }
+    },
+    "error": {
+      "no_filters": "Der skal angives lufthavne eller koordinater",
+      "invalid_icao": "Ugyldigt ICAO-kodeformat (skal være 4 bogstaver)",
+      "invalid_coordinates": "Ugyldige koordinatværdier",
+      "invalid_range": "Rækkevidde skal være større end 0"
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Konfigurera UK NOTAMs-integrering",
+        "description": "Övervaka UK NOTAMs efter flygplatskoder och/eller geografiska koordinater.",
+        "data": {
+          "aerodromes": "ICAO Flygplatskoder (kommaseparerade, t.ex. EGLL, EGKK, EGSS)",
+          "add_coordinates": "Lägg till koordinatområden",
+          "refresh_interval": "Uppdateringsintervall (minuter)"
+        }
+      },
+      "coordinates": {
+        "title": "Lägg till koordinatområde",
+        "description": "Lägg till ett geografiskt område för att övervaka NOTAMs efter plats.",
+        "data": {
+          "latitude": "Latitud",
+          "longitude": "Longitud",
+          "range_nm": "Räckvidd (nautiska mil)",
+          "add_another": "Lägg till ett annat koordinatområde"
+        }
+      }
+    },
+    "error": {
+      "no_filters": "Du måste ange flygplatser eller koordinater",
+      "invalid_icao": "Ogiltigt ICAO-kodformat (måste ha 4 bokstäver)",
+      "cannot_connect": "Anslutning till NATS PIB-flöde misslyckades",
+      "invalid_coordinates": "Ogiltiga koordinatvärden",
+      "invalid_range": "Räckvidden måste vara större än 0",
+      "unknown": "Ett oväntat fel uppstod"
+    },
+    "abort": {
+      "already_configured": "UK NOTAMs-integrering är redan konfigurerad"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "UK NOTAMs Inställningar",
+        "description": "Uppdatera UK NOTAM-övervakningskonfiguration.",
+        "data": {
+          "aerodromes": "ICAO Flygplatskoder (kommaseparerade)",
+          "refresh_interval": "Uppdateringsintervall (minuter)",
+          "modify_coordinates": "Ändra koordinatområden"
+        }
+      },
+      "coordinates": {
+        "title": "Lägg till koordinatområde",
+        "description": "{count} område(n) tillagda hittills.",
+        "data": {
+          "latitude": "Latitud",
+          "longitude": "Longitud",
+          "range_nm": "Räckvidd (nautiska mil)",
+          "add_another": "Lägg till ett annat koordinatområde"
+        }
+      }
+    },
+    "error": {
+      "no_filters": "Du måste ange flygplatser eller koordinater",
+      "invalid_icao": "Ogiltigt ICAO-kodformat (måste ha 4 bokstäver)",
+      "invalid_coordinates": "Ogiltiga koordinatvärden",
+      "invalid_range": "Räckvidden måste vara större än 0"
+    }
+  }
+}

@@ -1,7 +1,7 @@
 # Example configurations for the NOTAM integration
 
 # Example 1: Monitor specific airports
-notam:
+uknotams:
   airfields:
     - "EGLL"  # London Heathrow
     - "EGKK"  # London Gatwick

@@ -35,7 +35,7 @@ Each NOTAM creates a sensor with:
 
 ## Documentation
 
-See [README.md](https://github.com/USERNAME/ha-notam) for full documentation.
+See [README.md](https://github.com/ianpleasance/home-assistant-uknotam/) for full documentation.
 
 ## Data Source
 
@@ -43,5 +43,5 @@ UK NATS PIB (Pre-flight Information Bulletin) XML feed.
 
 ## Version
 
-**Current:** v3.0.2  
+**Current:** v3.0.0  
 **Requires:** Home Assistant 2024.1.0+

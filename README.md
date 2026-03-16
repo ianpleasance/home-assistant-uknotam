@@ -328,7 +328,7 @@ See [CHANGELOG.md](CHANGELOG.md) for full details.
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+Apache 2.0 — see [LICENSE](LICENSE).
 
 ## Disclaimer
 

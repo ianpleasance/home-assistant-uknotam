@@ -11,31 +11,31 @@ views:
         title: NOTAM Bulletin Summary
         icon: mdi:information
         entities:
-          - entity: sensor.uk_notam_data
+          - entity: sensor.uknotam_data
             name: Active NOTAMs
             icon: mdi:counter
           - type: attribute
-            entity: sensor.uk_notam_data
+            entity: sensor.uknotam_data
             attribute: issued
             name: Bulletin Issued
             icon: mdi:clock-outline
           - type: attribute
-            entity: sensor.uk_notam_data
+            entity: sensor.uknotam_data
             attribute: valid_from
             name: Valid From
             icon: mdi:calendar-start
           - type: attribute
-            entity: sensor.uk_notam_data
+            entity: sensor.uknotam_data
             attribute: valid_to
             name: Valid To
             icon: mdi:calendar-end
           - type: attribute
-            entity: sensor.uk_notam_data
+            entity: sensor.uknotam_data
             attribute: organisation
             name: Organisation
             icon: mdi:office-building
           - type: attribute
-            entity: sensor.uk_notam_data
+            entity: sensor.uknotam_data
             attribute: content_explanation
             name: Coverage
             icon: mdi:map-marker-radius
@@ -48,7 +48,7 @@ views:
           {% for aerodrome in aerodromes %}
 
           {% set notams = states.sensor | selectattr('entity_id', 'search',
-          'notam_' + aerodrome.lower() + '_') | list %}
+          'uknotam_' + aerodrome.lower() + '_') | list %}
 
           {% if notams | length > 0 %}
 
@@ -77,9 +77,9 @@ views:
 
 
           {% set other_notams = states.sensor | selectattr('entity_id',
-          'search', 'notam_') | rejectattr('entity_id', 'in',
-          ['sensor.uk_notam_data', 'sensor.uk_notam_firs', 'sensor.uk_notam_aerodromes'])
-          | reject('match', 'sensor.uk_notam_(egss|egmc|egph|egll|egkk|eggw)_.*') |
+          'search', 'uknotam_') | rejectattr('entity_id', 'in',
+          ['sensor.uknotam_data', 'sensor.uknotam_firs', 'sensor.uknotam_aerodromes'])
+          | reject('match', 'sensor.uknotam_(egss|egmc|egph|egll|egkk|eggw)_.*') |
           list %}
 
           {% if other_notams | length > 0 %}
@@ -102,13 +102,13 @@ views:
         title: Quick Statistics
         columns: 3
         entities:
-          - entity: sensor.uk_notam_data
+          - entity: sensor.uknotam_data
             name: Active NOTAMs
             icon: mdi:bell-alert
-          - entity: sensor.uk_notam_aerodromes
+          - entity: sensor.uknotam_aerodromes
             name: UK Aerodromes
             icon: mdi:airport
-          - entity: sensor.uk_notam_firs
+          - entity: sensor.uknotam_firs
             name: FIRs
             icon: mdi:earth
       - type: button
@@ -145,7 +145,7 @@ views:
 
           {% set config_aerodromes = ['EGSS', 'EGMC', 'EGPH', 'EGLL', 'EGKK'] %}
 
-          {% set aerodrome_data = state_attr('sensor.uk_notam_aerodromes',
+          {% set aerodrome_data = state_attr('sensor.uknotam_aerodromes',
           'aerodromes') %}
 
 
@@ -243,16 +243,16 @@ views:
         title: Integration Statistics
         icon: mdi:chart-line
         entities:
-          - entity: sensor.uk_notam_data
+          - entity: sensor.uknotam_data
             name: Matching NOTAMs
             icon: mdi:check-circle
           - type: attribute
-            entity: sensor.uk_notam_aerodromes
+            entity: sensor.uknotam_aerodromes
             attribute: aerodrome_count
             name: Total UK Aerodromes
             icon: mdi:airport
           - type: attribute
-            entity: sensor.uk_notam_firs
+            entity: sensor.uknotam_firs
             attribute: fir_count
             name: Total UK FIRs
             icon: mdi:map-marker-radius
@@ -279,7 +279,7 @@ views:
           </style>
 
 
-          {% set firs = state_attr('sensor.uk_notam_firs', 'firs') %}
+          {% set firs = state_attr('sensor.uknotam_firs', 'firs') %}
 
 
           <table>
@@ -295,7 +295,7 @@ views:
           </table>
 
 
-          **Total FIRs:** {{ state_attr('sensor.uk_notam_firs', 'fir_count') }}
+          **Total FIRs:** {{ state_attr('sensor.uknotam_firs', 'fir_count') }}
       - type: markdown
         title: Major UK Aerodromes
         icon: mdi:airport
@@ -314,7 +314,7 @@ views:
           </style>
 
 
-          {% set all_aerodromes = state_attr('sensor.uk_notam_aerodromes',
+          {% set all_aerodromes = state_attr('sensor.uknotam_aerodromes',
           'aerodromes') %}
 
           {% set major_codes = ['EGLL', 'EGKK', 'EGSS', 'EGCC', 'EGPH', 'EGPF',
@@ -359,7 +359,7 @@ views:
 
 
           Go to **Developer Tools → States** and search for
-          `sensor.uk_notam_aerodromes`
+          `sensor.uknotam_aerodromes`
 
 
           Then look in the **attributes** section for the `aerodromes` list. You
@@ -376,7 +376,7 @@ views:
 
           {% set search = "HEATHROW" %}
 
-          {% set aerodromes = state_attr('sensor.uk_notam_aerodromes',
+          {% set aerodromes = state_attr('sensor.uknotam_aerodromes',
           'aerodromes') %}
 
           {{ aerodromes | selectattr('name', 'search', search) | list }}
@@ -400,7 +400,7 @@ views:
           </style>
 
 
-          {% set all_aerodromes = state_attr('sensor.uk_notam_aerodromes',
+          {% set all_aerodromes = state_attr('sensor.uknotam_aerodromes',
           'aerodromes') %}
 
 
@@ -474,4 +474,3 @@ views:
           - **PERM** - Permanent (no end date)
           - **UFN** - Until Further Notice
           - Date format: `YYYY-MM-DD HH:MM:SS`
-

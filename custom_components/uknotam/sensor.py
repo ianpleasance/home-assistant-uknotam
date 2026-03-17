@@ -22,7 +22,7 @@ _LOGGER = logging.getLogger(__name__)
 def _device_info(entry: ConfigEntry) -> DeviceInfo:
     return DeviceInfo(
         identifiers={(DOMAIN, entry.entry_id)},
-        name="UK NOTAM Monitor",
+        name="UK NOTAM",
         manufacturer="NATS",
         entry_type=DeviceEntryType.SERVICE,
     )
@@ -193,7 +193,9 @@ async def async_setup_entry(
 class UKNOTAMPIBSensor(CoordinatorEntity, SensorEntity):
     """PIB bulletin metadata + total NOTAM count."""
 
+    _attr_has_entity_name = True
     _attr_icon = "mdi:airplane-clock"
+    _attr_name = "Data"
     _attr_state_class = SensorStateClass.MEASUREMENT
 
     def __init__(
@@ -203,7 +205,6 @@ class UKNOTAMPIBSensor(CoordinatorEntity, SensorEntity):
     ) -> None:
         """Initialise."""
         super().__init__(coordinator)
-        self._attr_name = "UK NOTAM Data"
         self._attr_unique_id = f"{entry.entry_id}_uknotam_data"
         self._attr_device_info = _device_info(entry)
 
@@ -246,7 +247,9 @@ class UKNOTAMPIBSensor(CoordinatorEntity, SensorEntity):
 class UKNOTAMFIRSensor(CoordinatorEntity, SensorEntity):
     """Flight Information Region list sensor."""
 
+    _attr_has_entity_name = True
     _attr_icon = "mdi:earth"
+    _attr_name = "FIRs"
     _attr_state_class = SensorStateClass.MEASUREMENT
 
     def __init__(
@@ -256,7 +259,6 @@ class UKNOTAMFIRSensor(CoordinatorEntity, SensorEntity):
     ) -> None:
         """Initialise."""
         super().__init__(coordinator)
-        self._attr_name = "UK NOTAM FIRs"
         self._attr_unique_id = f"{entry.entry_id}_uknotam_firs"
         self._attr_device_info = _device_info(entry)
 
@@ -286,7 +288,9 @@ class UKNOTAMFIRSensor(CoordinatorEntity, SensorEntity):
 class UKNOTAMAerodromeSensor(CoordinatorEntity, SensorEntity):
     """Aerodrome list sensor."""
 
+    _attr_has_entity_name = True
     _attr_icon = "mdi:airport"
+    _attr_name = "Aerodromes"
     _attr_state_class = SensorStateClass.MEASUREMENT
 
     def __init__(
@@ -296,7 +300,6 @@ class UKNOTAMAerodromeSensor(CoordinatorEntity, SensorEntity):
     ) -> None:
         """Initialise."""
         super().__init__(coordinator)
-        self._attr_name = "UK NOTAM Aerodromes"
         self._attr_unique_id = f"{entry.entry_id}_uknotam_aerodromes"
         self._attr_device_info = _device_info(entry)
 
@@ -330,6 +333,7 @@ class UKNOTAMAerodromeSensor(CoordinatorEntity, SensorEntity):
 class UKNOTAMSensor(CoordinatorEntity, SensorEntity):
     """Representation of a single UK NOTAM."""
 
+    _attr_has_entity_name = True
     _attr_icon = "mdi:airplane-alert"
 
     def __init__(
@@ -343,15 +347,13 @@ class UKNOTAMSensor(CoordinatorEntity, SensorEntity):
         self._notam = notam
         self._entry = entry
 
-        aerodrome = (notam.get("aerodrome_code") or notam.get("nof") or "unknown").lower()
-        series = (notam.get("series") or "x").lower()
+        aerodrome = (notam.get("aerodrome_code") or notam.get("nof") or "unknown").upper()
+        series = (notam.get("series") or "x").upper()
         number = (notam.get("number") or "0").lower()
         year = (notam.get("year") or "00").lower()
 
         self._attr_unique_id = _make_notam_unique_id(entry.entry_id, notam)
-        self._attr_name = (
-            f"UK NOTAM {aerodrome.upper()} {series.upper()}{number}/{year}"
-        )
+        self._attr_name = f"{aerodrome} {series}{number}/{year}"
         self._attr_device_info = _device_info(entry)
 
     @property

@@ -137,16 +137,16 @@ All sensors are grouped under a **UK NOTAM Monitor** device (manufacturer: NATS)
 
 | Entity | State | Description |
 |--------|-------|-------------|
-| `sensor.uknotam_data` | int | Total number of active NOTAMs matching your filters |
-| `sensor.uknotam_firs` | int | Number of Flight Information Regions in the bulletin |
-| `sensor.uknotam_aerodromes` | int | Number of aerodromes in the bulletin |
+| `sensor.uk_notam_data` | int | Total number of active NOTAMs matching your filters |
+| `sensor.uk_notam_firs` | int | Number of Flight Information Regions in the bulletin |
+| `sensor.uk_notam_aerodromes` | int | Number of aerodromes in the bulletin |
 
-`sensor.uknotam_data` carries the full PIB bulletin metadata as attributes: `issued`, `valid_from`, `valid_to`, `authority_name`, `organisation`, `lower_fl`, `upper_fl`, etc.
+`sensor.uk_notam_data` carries the full PIB bulletin metadata as attributes: `issued`, `valid_from`, `valid_to`, `authority_name`, `organisation`, `lower_fl`, `upper_fl`, etc.
 
 ### Per-NOTAM sensors (one per matching NOTAM)
 
-**Entity ID:** `sensor.uknotam_<aerodrome>_<series><number>_<year>`  
-**Example:** `sensor.uknotam_egll_a6550_25`
+**Entity ID:** `sensor.uk_notam_<aerodrome>_<series><number>_<year>`  
+**Example:** `sensor.uk_notam_egll_a6550_25`
 
 **Name:** `UK NOTAM <AERODROME> <SERIES><NUMBER>/<YEAR>`  
 **Example:** `UK NOTAM EGLL A6550/25`
@@ -222,7 +222,7 @@ automation:
     condition:
       - condition: template
         value_template: >
-          {{ trigger.event.data.entity_id.startswith('sensor.uknotam_egll_') and
+          {{ trigger.event.data.entity_id.startswith('sensor.uk_notam_egll_') and
              trigger.event.data.old_state is none }}
     action:
       - service: notify.mobile_app_ians_galaxy_a53
@@ -238,9 +238,9 @@ automation:
 type: entities
 title: Active NOTAMs
 entities:
-  - sensor.uknotam_data
-  - sensor.uknotam_egll_a6550_25
-  - sensor.uknotam_egkk_b1234_25
+  - sensor.uk_notam_data
+  - sensor.uk_notam_egll_a6550_25
+  - sensor.uk_notam_egkk_b1234_25
 show_header_toggle: false
 ```
 
@@ -248,7 +248,7 @@ show_header_toggle: false
 
 ```yaml
 {% set egll_notams = states.sensor
-  | selectattr('entity_id', 'search', 'uknotam_egll_')
+  | selectattr('entity_id', 'search', 'uk_notam_egll_')
   | list %}
 {{ egll_notams | count }} active NOTAMs for Heathrow
 ```
@@ -296,7 +296,7 @@ Public feed — no authentication required.
 
 **Old `sensor.notam_*` entities remain after upgrade**
 - Remove the old `notam` integration from Settings → Devices & Services
-- The new `uknotam` integration creates fresh entities under `sensor.uknotam_*`
+- The new `uknotam` integration creates fresh entities under `sensor.uk_notam_*`
 
 **NOTAM sensors disappear**
 - This is normal — sensors are removed automatically when a NOTAM expires or is withdrawn from the feed
@@ -314,7 +314,7 @@ Version 2.0.0 renames the integration domain from `notam` to `uknotam`.
 1. Go to **Settings → Devices & Services** and remove the existing **NOTAM** integration
 2. Restart Home Assistant
 3. Add the **UK NOTAMs** integration (search for `uknotam`)
-4. Update any dashboard cards, automations, or templates that reference `sensor.notam_*` to use `sensor.uknotam_*`
+4. Update any dashboard cards, automations, or templates that reference `sensor.notam_*` to use `sensor.uk_notam_*`
 
 If you were using YAML config with `notam:`, rename the key to `uknotam:`.
 

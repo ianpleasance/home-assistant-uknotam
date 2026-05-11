@@ -1,0 +1,4 @@
+refresh:
+  name: Refresh NOTAMs
+  description: Immediately fetch the latest UK NOTAM bulletin from NATS.
+

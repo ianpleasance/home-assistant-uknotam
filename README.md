@@ -1,7 +1,8 @@
 # UK NOTAMs Integration for Home Assistant
 
-[![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/custom-components/hacs)
-[![GitHub release](https://img.shields.io/github/release/ianpleasance/home-assistant-uknotam.svg)](https://github.com/ianpleasance/home-assistant-uknotam/releases/)
+[![hacs_badge](https://img.shields.io/badge/HACS-Custom-c62828.svg)](https://github.com/hacs/integration)
+[![version](https://img.shields.io/github/v/release/ianpleasance/home-assistant-uknotam?display_name=tag&sort=semver&color=blue&label=version)](https://github.com/ianpleasance/home-assistant-uknotam/releases/latest)
+[![license](https://img.shields.io/github/license/ianpleasance/home-assistant-uknotam)](LICENSE)
 
 A Home Assistant custom integration that fetches and monitors **NOTAMs** (Notices to Airmen) from the UK NATS (National Air Traffic Services) PIB (Pre-flight Information Bulletin) XML feed.
 
